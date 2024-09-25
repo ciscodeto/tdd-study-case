@@ -2,12 +2,8 @@ package com.ciscodeto.main;
 
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello and welcome!");
-
         Scanner scanner = new Scanner(System.in);
         ArrayFiller arrayFiller = new ArrayFiller();
 
@@ -33,9 +29,6 @@ public class Main {
                 System.out.println(arrayFiller.getErrorMessage());
                 break;
             }
-
-            int num = Integer.parseInt(input.trim());
-            arrayFiller.processNumber(num);
 
             if (arrayFiller.isFinished()) {
                 System.out.println("Array filling is finished.");
