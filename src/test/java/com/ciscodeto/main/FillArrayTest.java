@@ -72,6 +72,20 @@ public class FillArrayTest {
         assertThat(arrayFiller.getCurrentArray()).isEqualTo(expected);
     }
 
+    @Test
+    @DisplayName("Should Remove A Number")
+    void shouldRemoveANumber() {
+        arrayFiller.initializeArray("1 2 3 4 5");
+        int[] expected = new int[10];
+
+        for (int i = 0; i < 4; i++) {
+            expected[i] = i + 1;
+        }
+
+        arrayFiller.processNumber(4);
+        assertThat(arrayFiller.getCurrentArray()).isEqualTo(expected);
+    }
+
 
     @Test
     @DisplayName("Should Stop At The Tenth Number")
