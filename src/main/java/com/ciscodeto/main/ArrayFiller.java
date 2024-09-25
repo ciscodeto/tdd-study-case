@@ -68,7 +68,6 @@ public class ArrayFiller {
             }
             array[size++] = num;
         }
-        return;
     }
 
     public boolean isFinished() {
@@ -84,5 +83,13 @@ public class ArrayFiller {
         } catch (NumberFormatException e) {
             errorState = true;
         }
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
     }
 }
