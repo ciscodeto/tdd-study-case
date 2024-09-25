@@ -43,9 +43,17 @@ public class FillArrayTest {
     }
 
     @Test
-    @DisplayName("Should Handle Less Than 5 Initial Numbers")
-    void shouldHandleLessThan5InitialNumbers() {
+    @DisplayName("Should Handle Less Than Five Initial Numbers")
+    void shouldHandleLessThanFiveInitialNumbers() {
         arrayFiller.initializeArray("1 2 3 4");
+
+        assertThat(arrayFiller.hasError()).isTrue();
+    }
+
+    @Test
+    @DisplayName("Should Handle More Than Five Initial Numbers")
+    void shouldHandleMoreThanFiveInitialNumbers() {
+        arrayFiller.initializeArray("1 2 3 4 5 6");
 
         assertThat(arrayFiller.hasError()).isTrue();
     }
