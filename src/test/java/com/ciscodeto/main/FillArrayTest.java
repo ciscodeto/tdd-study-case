@@ -55,5 +55,18 @@ public class FillArrayTest {
         assertThat(arrayFiller.isFinished()).isTrue();
     }
 
+    @Test
+    @DisplayName("Should Stop When Empty")
+    void shouldStopWhenEmpty() {
+        arrayFiller.initializeArray("1 2 3 4 5");
+        arrayFiller.processNumber(1);
+        arrayFiller.processNumber(2);
+        arrayFiller.processNumber(3);
+        arrayFiller.processNumber(4);
+        arrayFiller.processNumber(5);
+
+        assertThat(arrayFiller.isFinished()).isTrue();
+    }
+
 
 }
