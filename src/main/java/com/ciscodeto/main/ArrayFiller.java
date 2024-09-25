@@ -1,16 +1,40 @@
 package com.ciscodeto.main;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class ArrayFiller {
-    private int[] array;
-    private int size;
+    private int[] array = new int[10];
+    private int size = 0;
     private boolean errorState = false;
     private String errorMessage = "Erro";
 
     public ArrayFiller() {
     }
     public void initializeArray(String s) {
-        array = new int[]{30, 2, 39, 45, 89, 0, 0, 0, 0, 0};
+        String[] values = s.trim().split("\\s+");
+        if (values.length != 5) {
+            errorState = true;
+            return;
+        }
 
+        Set<Integer> numbers = new HashSet<>();
+
+        for (String value : values) {
+            int num;
+
+            try {
+                num = Integer.parseInt(value);
+            } catch (NumberFormatException e) {
+                errorState = true;
+                return;
+            }
+            if (!numbers.add(num)) {
+                errorState = true;
+                return;
+            }
+            array[size++] = num;
+        }
     }
 
     public boolean hasError() {
