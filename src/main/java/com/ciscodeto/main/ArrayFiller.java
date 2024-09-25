@@ -9,7 +9,7 @@ public class ArrayFiller {
     public ArrayFiller() {
     }
     public void initializeArray(String s) {
-        array = new int[]{1, 2, 3, 4, 5, 0, 0, 0, 0, 0};
+        array = new int[]{30, 2, 39, 45, 89, 0, 0, 0, 0, 0};
 
     }
 
@@ -19,5 +19,12 @@ public class ArrayFiller {
 
     public int[] getCurrentArray() {
         return array;
+    }
+
+    public void processNumber(int i) {
+    }
+
+    public boolean isFinished() {
+        return true;
     }
 }
