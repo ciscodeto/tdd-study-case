@@ -1,6 +1,9 @@
 package com.ciscodeto.main;
 
 public class ArrayFiller {
+    private int[] array;
+    private int size;
+
     public ArrayFiller(String s) {
     }
 
