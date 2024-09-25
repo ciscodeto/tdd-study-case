@@ -9,8 +9,8 @@ public class ArrayFiller {
     private boolean errorState = false;
     private String errorMessage = "Erro";
 
-    public ArrayFiller() {
-    }
+    public ArrayFiller() {}
+
     public void initializeArray(String s) {
         String[] values = s.trim().split("\\s+");
         if (values.length != 5) {
