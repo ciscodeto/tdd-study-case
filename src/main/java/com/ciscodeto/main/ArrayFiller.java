@@ -71,7 +71,7 @@ public class ArrayFiller {
     }
 
     public boolean isFinished() {
-        return true;
+        return size == 0 || size == array.length;
     }
 
     public void processInput(String input) {
