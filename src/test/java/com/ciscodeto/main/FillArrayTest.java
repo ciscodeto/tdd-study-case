@@ -82,7 +82,7 @@ public class FillArrayTest {
             expected[i] = i + 1;
         }
 
-        arrayFiller.processNumber(4);
+        arrayFiller.processNumber(5);
         assertThat(arrayFiller.getCurrentArray()).isEqualTo(expected);
     }
 
