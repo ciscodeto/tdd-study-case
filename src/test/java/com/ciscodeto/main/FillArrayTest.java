@@ -43,7 +43,7 @@ public class FillArrayTest {
     }
 
     @Test
-    @DisplayName("Should Decrease Array Size At The Tenth Number")
+    @DisplayName("Should Stop At The Tenth Number")
     void shouldStopAtTheTenthNumber() {
         arrayFiller.initializeArray("1 2 3 4 5");
         arrayFiller.processNumber(6);
