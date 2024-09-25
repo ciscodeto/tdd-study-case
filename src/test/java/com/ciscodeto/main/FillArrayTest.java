@@ -65,7 +65,6 @@ public class FillArrayTest {
         assertThat(arrayFiller.hasError()).isTrue();
     }
 
-
     @Test
     @DisplayName("Should Insert A Number")
     void shouldInsertANumber() {

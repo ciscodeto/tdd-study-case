@@ -45,9 +45,9 @@ public class ArrayFiller {
         return array.clone();
     }
 
-    public boolean processNumber(int num) {
+    public void processNumber(int num) {
         if (errorState) {
-            return false;
+            return;
         }
 
         int index = -1;
@@ -64,17 +64,25 @@ public class ArrayFiller {
             array[--size] = 0;
         } else {
             if (size >= 10) {
-                return false;
+                return;
             }
             array[size++] = num;
         }
-        return true;
+        return;
     }
 
     public boolean isFinished() {
         return true;
     }
 
-    public void processInput(String a) {
+    public void processInput(String input) {
+        if (errorState) {
+            return;
+        }
+        try {
+            int num = Integer.parseInt(input.trim());
+        } catch (NumberFormatException e) {
+            errorState = true;
+        }
     }
 }
