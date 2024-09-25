@@ -7,9 +7,7 @@ public class ArrayFiller {
     private int[] array = new int[10];
     private int size = 0;
     private boolean errorState = false;
-    private String errorMessage = "Erro";
 
-    public ArrayFiller() {}
 
     public void initializeArray(String s) {
         String[] values = s.trim().split("\\s+");
@@ -80,6 +78,7 @@ public class ArrayFiller {
         }
         try {
             int num = Integer.parseInt(input.trim());
+            processNumber(num);
         } catch (NumberFormatException e) {
             errorState = true;
         }
@@ -90,6 +89,7 @@ public class ArrayFiller {
     }
 
     public String getErrorMessage() {
+        String errorMessage = "Erro";
         return errorMessage;
     }
 }
