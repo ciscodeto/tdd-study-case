@@ -43,6 +43,15 @@ public class FillArrayTest {
     }
 
     @Test
+    @DisplayName("Should Handle Less Than 5 Initial Numbers")
+    void shouldHandleLessThan5InitialNumbers() {
+        arrayFiller.initializeArray("1 2 3 4");
+
+        assertThat(arrayFiller.hasError()).isTrue();
+    }
+
+
+    @Test
     @DisplayName("Should Stop At The Tenth Number")
     void shouldStopAtTheTenthNumber() {
         arrayFiller.initializeArray("1 2 3 4 5");

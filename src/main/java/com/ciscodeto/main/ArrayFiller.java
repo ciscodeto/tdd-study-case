@@ -42,10 +42,33 @@ public class ArrayFiller {
     }
 
     public int[] getCurrentArray() {
-        return array;
+        return array.clone();
     }
 
-    public void processNumber(int i) {
+    public boolean processNumber(int num) {
+        if (errorState) {
+            return false;
+        }
+
+        int index = -1;
+        for (int i = 0; i < size; i++) {
+            if (array[i] == num) {
+                index = i;
+                break;
+            }
+        }
+        if (index != -1) {
+            for (int i = index; i < size - 1; i++) {
+                array[i] = array[i + 1];
+            }
+            array[--size] = 0;
+        } else {
+            if (size >= 10) {
+                return false;
+            }
+            array[size++] = num;
+        }
+        return true;
     }
 
     public boolean isFinished() {
