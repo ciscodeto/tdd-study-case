@@ -1,10 +1,7 @@
 package com.ciscodeto.main;
 
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.lang.reflect.Array;
 
@@ -32,6 +29,7 @@ public class FillArrayTest {
         }
 
         assertThat(arrayFiller.getCurrentArray()).isEqualTo(expected);
+
     }
 
     @Test
@@ -57,6 +55,16 @@ public class FillArrayTest {
 
         assertThat(arrayFiller.hasError()).isTrue();
     }
+
+    @Test
+    @DisplayName("Should Handle Invalid Input")
+    void shouldHandleInvalidInput() {
+        arrayFiller.initializeArray("1 2 3 4 5");
+        arrayFiller.processInput("a");
+
+        assertThat(arrayFiller.hasError()).isTrue();
+    }
+
 
     @Test
     @DisplayName("Should Insert A Number")

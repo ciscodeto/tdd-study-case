@@ -74,4 +74,7 @@ public class ArrayFiller {
     public boolean isFinished() {
         return true;
     }
+
+    public void processInput(String a) {
+    }
 }
