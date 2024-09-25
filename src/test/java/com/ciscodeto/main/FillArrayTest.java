@@ -17,7 +17,6 @@ public class FillArrayTest {
         arrayFiller.initializeArray("1 2 3 4 5");
 
         int[] expected = new int[10];
-
         for (int i = 0; i < 5; i++) {
             expected[i] = i + 1;
         }
@@ -29,9 +28,9 @@ public class FillArrayTest {
     @DisplayName("Should Handle Duplicate Initial Numbers")
     void shouldHandleDuplicateInitialNumbers() {
         ArrayFiller arrayFiller = new ArrayFiller();
+        arrayFiller.initializeArray("1 2 2 3 4");
 
-        assertThat(arrayFiller);
-        fail();
+        assertThat(arrayFiller.hasError()).isTrue();
     }
 
 
